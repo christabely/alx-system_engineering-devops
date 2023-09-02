@@ -8,8 +8,8 @@ It will generate two keys;
 A private key called 0-RSA_public_key.pub
 Public key called 0-RSA_public_key.pub.pub
 
-Rename the private key 
-0-RSA_private_key.pem
+Rename the private key
+~0-RSA_private_key.pem
 
 Rename the public key 
 0-RSA_public_key.pub
