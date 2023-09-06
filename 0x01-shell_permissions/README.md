@@ -25,22 +25,29 @@ Syntax: sudo chown name_of_newowner file_name
 `chgrp` command is used to changed the group ownership of a file or directory.
 Syntax: chgrp new_group file_name
 
-`id` command 
+`id` command displays user and group information for a specified user or the current user. When the "id" command is run without any arguments, it shows information about the current user.
 
-`groups` command
+`groups` command displays the groups to which a user belongs. When this command is run followed by a username, it lists all the groups that the specified user is a member of.
 
-`whoami` command
+`whoami` command displays the username of the currently logged-in user. When you run this command in a terminal, it will typically return your username.
 
-`adduser` command
+`adduser` command is a higher-level utility tool that simplifies the process of creating a new user account. When you run adduser, it prompts you for various user details, including username, password, and additional information.
+Syntax: sudo adduser new_username
 
-`useradd` command
+`useradd` command is a lower-level utility for creating user accounts. It requires more manual input and does not offer as much interactive assistance as adduser.
 
-`addgroup` command
+`addgroup` command is used to create new groups in Unix and Linux. You can use addgroup to create a new group and then add users to that group using other commands like usermod.
+Syntax: sudo addgroup new_groupname
 
-Value	Meaning
-777	(rwxrwxrwx) No restrictions on permissions. Anybody may do anything. Generally not a desirable setting.
-755	(rwxr-xr-x) The file's owner may read, write, and execute the file. All others may read and execute the file. This setting is common for programs that are used by all users.
-700	(rwx------) The file's owner may read, write, and execute the file. Nobody else has any rights. This setting is useful for programs that only the owner may use and must be kept private from others.
-666	(rw-rw-rw-) All users may read and write the file.
-644	(rw-r--r--) The owner may read and write a file, while all others may only read the file. A common setting for data files that everybody may read, but only the owner may change.
-600	(rw-------) The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
+When setting permissions using chmod, octal (base-8) value can be used to represent the desired permissions for the owner, group, and others. The octal value consists of three digits, each representing the permissions for the owner, group, and others, respectively. Each digit is calculated by adding the values for specific permissions:
+4 represents read permission.
+2 represents write permission.
+1 represents execute permission
+
+Chmod Octal Value	Meaning
+**777	(rwxrwxrwx)** No restrictions on permissions. Anybody may do anything. Generally not a desirable setting.
+**755	(rwxr-xr-x)** The file's owner may read, write, and execute the file. All others may read and execute the file. This setting is common for programs that are used by all users.
+**700	(rwx------)** The file's owner may read, write, and execute the file. Nobody else has any rights. This setting is useful for programs that only the owner may use and must be kept private from others.
+**666	(rw-rw-rw-)** All users may read and write the file.
+**644	(rw-r--r--)** The owner may read and write a file, while all others may only read the file. A common setting for data files that everybody may read, but only the owner may change.
+**600	(rw-------)** The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
