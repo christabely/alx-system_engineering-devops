@@ -57,8 +57,6 @@ When setting permissions using chmod, octal (base-8) value can be used to repres
 
 **600 (rw-------)** The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
 
-``h
-
 `1.How to print the effective userid`
 
 To print the effective user ID (EUID) in a Unix-like operating system, you can use the geteuid() function in a programming language like C or use the id -u command in the terminal. Here's how you can do it in both ways:
@@ -79,3 +77,50 @@ Compile this code using a C compiler (e.g., gcc) and then run the executable. It
 `Using the terminal (Linux/Unix)`
 You can simply use the id -u command in the terminal to print the effective user ID. Syntax: id -u
 
+`2. How to print the groups a user is in`
+You can use the getgrouplist() function in C to retrieve the list of groups a user is in and the 'groups' command in the terminal.
+
+`Using C`
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <grp.h>
+
+int main() {
+    uid_t uid = getuid();
+    int ngroups_max = sysconf(_SC_NGROUPS_MAX);
+    gid_t *groups = malloc(ngroups_max * sizeof(gid_t));
+
+    if (groups == NULL) {
+        perror("malloc");
+        return 1;
+    }
+
+    int ngroups = getgroups(ngroups_max, groups);
+
+    if (ngroups == -1) {
+        perror("getgroups");
+        free(groups);
+        return 1;
+    }
+
+    printf("User's Groups:\n");
+    for (int i = 0; i < ngroups; i++) {
+        struct group *grp = getgrgid(groups[i]);
+        if (grp != NULL) {
+            printf("%s (%d)\n", grp->gr_name, grp->gr_gid);
+        }
+    }
+
+    free(groups);
+    return 0;
+}
+
+Compile this code using a C compiler (e.g., gcc) and then run the executable. It will print the groups that the current user is a member of.
+
+`Using the terminal (Linux/Unix)`
+
+You can use the 'groups' command in the terminal to print the groups a user is in. Syntax: groups
+
+`3. How to print real and effective user and group IDs`
