@@ -1,13 +1,15 @@
-Shell permissions dictate who can access, modify, or execute files and directories. Read:
-http://linuxcommand.org/lc3_lts0090.php
+# Shell Permissions 
+Read:http://linuxcommand.org/lc3_lts0090.php
 
-Shell Permissions are managed through three permission categories:
+Shell permissions dictate who accesses, modifies, or executes files and directories managed through three permission categories:
 
 **Owner Permissions**: These apply to the owner of the file or directory. The owner can typically control who can access, modify, or execute the file.
 
 **Group Permissions**: These apply to a group of users who have been granted access to the file or directory.
 
 **Others Permissions**: These applies to all other users who are not the owner or part of the group.
+
+# Commands
 
 `chmod` command is used to change permissions in the shell.
 
@@ -35,9 +37,10 @@ Syntax: sudo adduser new_username
 
 `useradd` command is a lower-level utility for creating user accounts. It requires more manual input and does not offer as much interactive assistance as adduser.
 
-`addgroup` command is used to create new groups in Unix and Linux. You can use addgroup to create a new group and then add users to that group using other commands like usermod.
+`addgroup` command is used to create new groups. You can use addgroup to create a new group and then add users to that group using other commands like usermod.
 Syntax: sudo addgroup new_groupname
 
+# Chmod Octal Base Value
 When setting permissions using chmod, octal (base-8) value can be used to represent the desired permissions for the owner, group, and others. The octal value consists of three digits, each representing the permissions for the owner, group, and others, respectively. Each digit is calculated by adding the values for specific permissions:
 4 represents read permission.
 2 represents write permission.
@@ -57,9 +60,9 @@ When setting permissions using chmod, octal (base-8) value can be used to repres
 
 **600 (rw-------)** The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
 
-`1.How to print the effective userid`
+# How to print the effective userid
 
-To print the effective user ID (EUID) in a Unix-like operating system, you can use the geteuid() function in a programming language like C or use the id -u command in the terminal. Here's how you can do it in both ways:
+To print the effective user ID (EUID),you can use the geteuid() function in the C programming language or use the id -u command in the terminal. Here's how you can do it in both ways:
 
 `Using C`
 
@@ -74,13 +77,16 @@ int main() {
 
 Compile this code using a C compiler (e.g., gcc) and then run the executable. It will print the EUID to the console.
 
-`Using the terminal (Linux/Unix)`
+`Using the terminal`
+
 You can simply use the id -u command in the terminal to print the effective user ID. Syntax: id -u
 
-`2. How to print the groups a user is in`
+# How to print the groups a user is in
+
 You can use the getgrouplist() function in C to retrieve the list of groups a user is in and the 'groups' command in the terminal.
 
 `Using C`
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -119,14 +125,16 @@ int main() {
 
 Compile this code using a C compiler (e.g., gcc) and then run the executable. It will print the groups that the current user is a member of.
 
-`Using the terminal (Linux/Unix)`
+`Using the terminal`
 
 You can use the 'groups' command in the terminal to print the groups a user is in. Syntax: groups
 
-`3. How to print real and effective user and group IDs`
+# How to print real and effective user and group IDs
+
 In a C program, you can use the getuid(), geteuid(), getgid(), and getegid() functions to retrieve the real and effective user and group IDs. In the terminal, you can use the id command with appropriate options to display the real and effective user and group IDs.
 
 `Using C`
+
 #include <stdio.h>
 #include <unistd.h>
 
@@ -147,18 +155,20 @@ int main() {
 Compile this code using a C compiler (e.g., gcc) and then run the executable. It will print both the real and effective user and group IDs.
 
 `Using the terminal`
-# Print real and effective user IDs
+
+- Print real and effective user IDs
 id -u
 id -u -r
 
-# Print real and effective group IDs
+- Print real and effective group IDs
 id -g
 id -g -r
 
-id -u will print the effective user ID.
-id -u -r will print the real user ID.
-id -g will print the effective group ID.
-id -g -r will print the real group ID.
+- id -u will print the effective user ID.
+- id -u -r will print the real user ID.
+- id -g will print the effective group ID.
+- id -g -r will print the real group ID.
+
 Each command will display the respective user or group ID as a number on the terminal.
 
 
