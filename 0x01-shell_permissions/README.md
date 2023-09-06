@@ -235,3 +235,46 @@ Compile this code using a C compiler (e.g., gcc) and run it with elevated privil
 Use the groupadd command followed by the name of the group you want to create. Syntax: sudo groupadd group_name
 
 # How to create a user
+
+`Using the terminal`
+
+You use the useradd command. 
+Synax: sudo useradd newuser
+
+`Using C`
+
+C program is typically not recommended because user management is a system-level task that should be performed with administrative privileges. If you want to create a user from within a C program by executing terminal commands, you can use the system() function. Here's an example:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    const char *username = "newuser";  // Change this to your desired username
+
+    // Construct the command to create a user
+    char command[100];
+    snprintf(command, sizeof(command), "sudo useradd %s", username);
+
+    // Execute the command
+    int status = system(command);
+
+    if (status == 0) {
+        printf("User '%s' has been created.\n", username);
+    } else {
+        printf("Failed to create user '%s'.\n", username);
+    }
+
+    return 0;
+}
+
+In this C program:
+
+Change the username variable to your desired username.
+
+The system() function is used to execute the useradd command with sudo.
+
+The result of the command execution is checked, and a message is printed accordingly.
+
+Compile the C program using a C compiler (e.g., gcc) and run it with elevated privileges (e.g., using sudo). Be cautious when creating users programmatically, as it can affect system security and configuration
+
+
