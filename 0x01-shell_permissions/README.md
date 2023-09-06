@@ -1,10 +1,6 @@
-Shell permissions dictate who can access, modify, or execute files and directories.
-
-For better understanding, read;
-http://linuxcommand.org/lc3_lts0090.php
+Shell permissions dictate who can access, modify, or execute files and directories. For better understanding, read; http://linuxcommand.org/lc3_lts0090.php
 
 Shell Permissions are managed through three permission categories:
-
 **Owner Permissions**: These apply to the owner of the file or directory. The owner can typically control who can access, modify, or execute the file. 
 
 **Group Permissions**: These apply to a group of users who have been granted access to the file or directory.
@@ -46,26 +42,34 @@ When setting permissions using chmod, octal (base-8) value can be used to repres
 
 Chmod Octal Value	Meaning
 **777	(rwxrwxrwx)** No restrictions on permissions. Anybody may do anything. Generally not a desirable setting.
+
 **755	(rwxr-xr-x)** The file's owner may read, write, and execute the file. All others may read and execute the file. This setting is common for programs that are used by all users.
+
 **700	(rwx------)** The file's owner may read, write, and execute the file. Nobody else has any rights. This setting is useful for programs that only the owner may use and must be kept private from others.
+
 **666	(rw-rw-rw-)** All users may read and write the file.
+
 **644	(rw-r--r--)** The owner may read and write a file, while all others may only read the file. A common setting for data files that everybody may read, but only the owner may change.
+
 **600	(rw-------)** The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
 
 ``h
+
 `How to print the effective userid`
 To print the effective user ID (EUID) in a Unix-like operating system, you can use the geteuid() function in a programming language like C or use the id -u command in the terminal. Here's how you can do it in both ways:
 
-Using C:
-`#include <stdio.h>
+`Using C`
+#include <stdio.h>
 #include <unistd.h>
 
 int main() {
     uid_t euid = geteuid();
     printf("Effective User ID: %d\n", euid);
     return 0;
-}`
+}
 
 Compile this code using a C compiler (e.g., gcc) and then run the executable. It will print the EUID to the console.
 
-Using the terminal (Linux/Unix):
+`Using the terminal (Linux/Unix)`
+You can simply use the id -u command in the terminal to print the effective user ID. Syntax: id -u
+
