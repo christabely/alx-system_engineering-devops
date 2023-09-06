@@ -144,9 +144,41 @@ grep : Examines each line of data it receives from standard input and outputs ev
    grep pattern file
    ```
 
-fmt : Reads text from standard input, then outputs formatted text on standard output.
+fmt : Reads text from standard input, then outputs formatted text on standard output. Syntax:
+   
+   ```
+   fmt -w 80 input.txt
+   ```
+   ```
+   fmt -s -w 60 input.txt
+   ```
+   ```
+   fmt -u -w 70 input.txt
+   ```
+   ```
+   fmt -t -w 80 input.txt
+   ```
+   ```
+   fmt -c -w 80 input.txt1
+   ```  
 
 pr : Takes text input from standard input and splits the data into pages with page breaks, headers and footers in preparation for printing.
+
+   ```
+   pr -d input.txt
+   ```
+   ```
+   pr -t input.txt
+   ```
+   ```
+   pr -l 50 input.txt
+   ```
+   ```
+   pr -w 80 input.txt
+   ```
+   ```
+   pr -o 5 input.txt
+   ```
 
 head : Outputs the first few lines of its input. Useful for getting the header of a file.
 
