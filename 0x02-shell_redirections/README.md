@@ -2,7 +2,7 @@
 
 http://linuxcommand.org/lc3_lts0070.php
 
-Shell input and output redirection are techniques used to control the flow of data between processes and files. By using some special notations we can redirect the output of many commands to files, devices, and even to the input of other commands.
+Shell input and output redirection are techniques used to control the flow of data between processes and files by redirecting the output of many commands to files, devices, and even to the input of other commands.
 Here's a brief overview:
 
 `1.Input Redirection (`<`)` : This allows you to take input from a file instead of the standard keyboard input. For example, to execute a command that reads input from a file called "input.txt," you can use:
@@ -40,6 +40,7 @@ In the example below, the output of the ls command is fed into less. By using th
    ```
 
 Pipeline Commands and what they do.
+
 This displays the 10 newest files in the current directory.
    ```
    ls -lt | head
@@ -101,7 +102,20 @@ sort : SORT command is used to sort files, arranging the records in a particular
    sort -o filename.txt inputfile.txt
    ```
 
-uniq : It makes sure every line is unique by comparing adjacent lines and then removing duplicated lines of data. The duplicated lines must be adjacent. (Before issuing the uniq command, use the sort command to make all duplicate lines adjacent.)
+uniq : It makes sure every line is unique by comparing adjacent lines and then removing duplicated lines of data. The duplicated lines must be adjacent. (Before issuing the uniq command, use the sort command to make all duplicate lines adjacent.) 
+
+In summary, the "sort -u" command and the "uniq" command are both used to remove duplicate lines from a text file, but they work differently:
+The "sort -u" command combines the functionality of sorting and removing duplicates. It first sorts the lines in the input file and then removes adjacent duplicate lines, keeping only unique lines in the output.
+You typically use it as follows: `sort -u file_name`
+It requires the input to be sorted, or else it won't remove duplicates correctly.
+
+The "uniq" command is specifically designed to remove duplicate lines from a sorted file. It operates on sorted input and removes only consecutive duplicate lines, meaning that it will keep one instance of each unique line. It is used as follows: `sort file_name | uniq`
+Alternatively, you can use `uniq -u` to show only the unique lines, but this requires sorted input as well.
+
+(In simpler terms, "sort -u" combines sorting and duplicate removal in a single command and requires sorted input, while "uniq" focuses solely on removing consecutive duplicates and also requires sorted input. The choice between them depends on whether you need to sort the input as well and whether you want to remove consecutive or all duplicate lines.)
+Syntax:
+
+
    ```
    uniq -f 2 input_file
    ```
@@ -118,18 +132,8 @@ uniq : It makes sure every line is unique by comparing adjacent lines and then r
    uniq input_file
    ```
 
-In summary, the "sort -u" command and the "uniq" command are both used to remove duplicate lines from a text file, but they work differently:
-
-The "sort -u" command combines the functionality of sorting and removing duplicates. It first sorts the lines in the input file and then removes adjacent duplicate lines, keeping only unique lines in the output.
-You typically use it as follows: `sort -u file_name`
-It requires the input to be sorted, or else it won't remove duplicates correctly.
-
-The "uniq" command is specifically designed to remove duplicate lines from a sorted file. It operates on sorted input and removes only consecutive duplicate lines, meaning that it will keep one instance of each unique line. It is used as follows: `sort file_name | uniq`
-Alternatively, you can use `uniq -u` to show only the unique lines, but this requires sorted input as well.
-
-(In simpler terms, "sort -u" combines sorting and duplicate removal in a single command and requires sorted input, while "uniq" focuses solely on removing consecutive duplicates and also requires sorted input. The choice between them depends on whether you need to sort the input as well and whether you want to remove consecutive or all duplicate lines.)
-
 grep : Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters. In other words, it allows you to search for patterns or specific text within files. Syntax:
+
    ```
    grep "apple" fruits.txt
    ```
