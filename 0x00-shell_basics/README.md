@@ -71,12 +71,46 @@ For example, a common Bash prompt might look like: `user@hostname:~/directory$`.
 
 # Using History (Basics):
 
-The history command in a shell allows you to view a list of previously executed commands.
-
-Here's how to use it:
-To display the command history, simply type `history` and press Enter.
+The history command in a shell allows you to view a list of previously executed commands. To display the command history, simply type `history` and press Enter.
 You'll see a numbered list of recently executed commands.
 
 You can repeat a command from history by using the `!` followed by the command's number. For example, `!123` would run the command at position 123 in the history.
 
 To search for a specific command in history, use `Ctrl+R` in many shells, which opens a reverse search prompt. Start typing part of the command, and it will find the most recent match.
+
+# Navigation
+
+1. `cd` - Change Directory:
+This command is used to change the current working directory. For example, to move to a directory named "my_directory," you would type: `cd my_directory`.
+
+2. `pwd` - Print Working Directory:
+This command displays the current working directory's absolute path.
+Running `pwd` will show you where you are in the filesystem.
+
+3. `ls` - List Directory Contents:
+This is used to list the files and directories in the current directory.
+You can use options like `-l` for a detailed list or `-a` to show hidden files.
+
+4. `.` and `..`:
+`.` represents the current directory.
+`..` represents the parent directory of the current directory.
+
+5. Working Directory:
+The working directory is the directory in which you are currently operating. To print the working directory, use the `pwd` command.
+
+6. Root Directory:
+The root directory is the top-level directory in the filesystem hierarchy.
+It is represented by a single forward slash `/`.
+
+7. Home Directory:
+The home directory is the default directory for a user when they log in.
+To go to your home directory, you can use the `cd` command without any arguments: `cd`.
+
+8. Difference between Root and Home Directory of the User "root":
+The root directory (`/`) is the system's top-level directory, while the home directory of the user "root" (`/root`) is the default directory for the superuser "root."
+
+9. Hidden Files:
+Hidden files and directories are those whose names start with a dot (e.g., `.config`). They are typically used for configuration files and are not displayed by default when you run `ls`.To list hidden files, use the `ls -a` command.
+
+11. `cd -`:
+The `cd -` command is used to switch to the previous working directory. It's a convenient way to toggle between two directories.
