@@ -1,8 +1,11 @@
 Shell permissions dictate who can access, modify, or execute files and directories. http://linuxcommand.org/lc3_lts0090.php
 
 Shell Permissions are managed through three permission categories:
-**Owner Permissions**: These apply to the owner of the file or directory. The owner can typically control who can access, modify, or execute the file. 
+
+**Owner Permissions**: These apply to the owner of the file or directory. The owner can typically control who can access, modify, or execute the file.
+
 **Group Permissions**: These apply to a group of users who have been granted access to the file or directory.
+
 **Others Permissions**: These applies to all other users who are not the owner or part of the group.
 
 `chmod` command is used to change permissions in the shell.
