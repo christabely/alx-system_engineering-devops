@@ -120,19 +120,14 @@ uniq : It makes sure every line is unique by comparing adjacent lines and then r
 
 In summary, the "sort -u" command and the "uniq" command are both used to remove duplicate lines from a text file, but they work differently:
 
-1. `sort -u`:
-   - The "sort -u" command combines the functionality of sorting and removing duplicates.
-   - It first sorts the lines in the input file and then removes adjacent duplicate lines, keeping only unique lines in the output.
-   - You typically use it as follows: `sort -u file_name`
-   - It requires the input to be sorted, or else it won't remove duplicates correctly.
+The "sort -u" command combines the functionality of sorting and removing duplicates. It first sorts the lines in the input file and then removes adjacent duplicate lines, keeping only unique lines in the output.
+You typically use it as follows: `sort -u file_name`
+It requires the input to be sorted, or else it won't remove duplicates correctly.
 
-2. `uniq`:
-   - The "uniq" command is specifically designed to remove duplicate lines from a sorted file.
-   - It operates on sorted input and removes only consecutive duplicate lines, meaning that it will keep one instance of each unique line.
-   - You can use it as follows: `sort file_name | uniq`
-   - Alternatively, you can use `uniq -u` to show only the unique lines, but this requires sorted input as well.
+The "uniq" command is specifically designed to remove duplicate lines from a sorted file. It operates on sorted input and removes only consecutive duplicate lines, meaning that it will keep one instance of each unique line. It is used as follows: `sort file_name | uniq`
+Alternatively, you can use `uniq -u` to show only the unique lines, but this requires sorted input as well.
 
-In summary, "sort -u" combines sorting and duplicate removal in a single command and requires sorted input, while "uniq" focuses solely on removing consecutive duplicates and also requires sorted input. The choice between them depends on whether you need to sort the input as well and whether you want to remove consecutive or all duplicate lines.
+(In simpler terms, "sort -u" combines sorting and duplicate removal in a single command and requires sorted input, while "uniq" focuses solely on removing consecutive duplicates and also requires sorted input. The choice between them depends on whether you need to sort the input as well and whether you want to remove consecutive or all duplicate lines.)
 
 grep : Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters.
 
