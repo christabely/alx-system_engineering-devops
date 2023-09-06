@@ -1,5 +1,12 @@
 # Shell, init files, variables and expansions
 
+http://linuxcommand.org/lc3_lts0080.php
+https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html
+https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html
+https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html
+https://www.linfo.org/alias.html
+
+
 1. `printenv`: This command is used to print the environment variables of the current shell session. Environment variables store information that the shell and various programs use, such as system paths or user-specific settings.
 
 2. `set`: The `set` command is used to display all shell variables, including environment variables, user-defined variables, and shell options. It can also be used to set or change the values of variables.
