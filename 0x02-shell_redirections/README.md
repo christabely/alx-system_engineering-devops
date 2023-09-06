@@ -1,7 +1,6 @@
 # Shell I/O Rediections
 
 http://linuxcommand.org/lc3_lts0070.php
-http://mywiki.wooledge.org/BashGuide/SpecialCharacters
 
 Shell input and output redirection are techniques used to control the flow of data between processes and files. By using some special notations we can redirect the output of many commands to files, devices, and even to the input of other commands.
 Here's a brief overview:
@@ -173,6 +172,7 @@ echo "Hello, World!" | rev
 rev filename.txt
 
 # Special Characters
+http://mywiki.wooledge.org/BashGuide/SpecialCharacters
 Special characters are characters that have a specific function or meaning in programming or text processing. They are not part of the standard alphanumeric characters (A-Z, 0-9) and include symbols like punctuation marks and control characters.
 
 2. Here's what each of the mentioned special characters typically does in programming or text processing:
