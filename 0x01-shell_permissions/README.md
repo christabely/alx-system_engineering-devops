@@ -55,10 +55,11 @@ Chmod Octal Value	Meaning
 
 ``h
 
-`How to print the effective userid`
+`1.How to print the effective userid`
 To print the effective user ID (EUID) in a Unix-like operating system, you can use the geteuid() function in a programming language like C or use the id -u command in the terminal. Here's how you can do it in both ways:
 
 `Using C`
+
 #include <stdio.h>
 #include <unistd.h>
 
