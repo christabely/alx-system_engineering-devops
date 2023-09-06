@@ -1,1 +1,28 @@
-My name is Betty
+For better understanding, read
+http://linuxcommand.org/lc3_lts0090.php
+
+Shell permissions dictate who can access, modify, or execute files and directories. They are managed through three permission categories:
+
+1. **Owner Permissions**: These apply to the owner of the file or directory. The owner can typically control who can access, modify, or execute the file. 
+
+2. **Group Permissions**: These apply to a group of users who have been granted access to the file or directory.
+
+3. **Others Permissions**: These applies to all other users who are not the owner or part of the group.
+
+`chmod` command is used to change permissions in the shell.
+`ls -l` command is used to view permissions for files and directories.
+`su` (Switch User) command is used to switch to another user account, including the root (superuser) account, after providing the password for that account. When you use `su`, you effectively become that user, inheriting their environment variables and permissions.You would need to know the password of the target user account, which can be a security concern.
+`sudo` (Superuser Do) command allows authorized users to execute specific commands as the superuser or another user, without needing to know the target user's password. Users with sudo access must authenticate with their own password, not the target user's password, which enhances security.
+`chown` command is used to change the ownership or users of files and directories. To do this, we employ the superuser privilages by using the sudo command to execute chown.
+Syntax: sudo chown name_of_newowner file_name
+`chgrp` command is used to changed the group ownership of a file or directory.
+Syntax: chgrp new_group file_name
+
+
+Value	Meaning
+777	(rwxrwxrwx) No restrictions on permissions. Anybody may do anything. Generally not a desirable setting.
+755	(rwxr-xr-x) The file's owner may read, write, and execute the file. All others may read and execute the file. This setting is common for programs that are used by all users.
+700	(rwx------) The file's owner may read, write, and execute the file. Nobody else has any rights. This setting is useful for programs that only the owner may use and must be kept private from others.
+666	(rw-rw-rw-) All users may read and write the file.
+644	(rw-r--r--) The owner may read and write a file, while all others may only read the file. A common setting for data files that everybody may read, but only the owner may change.
+600	(rw-------) The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
