@@ -117,7 +117,7 @@ The `cd -` command is used to switch to the previous working directory. It's a c
 
 # Looking Around
 
-`ls` - You can use various options like `-l` for a detailed (long) list, `-a` to show hidden files, and `-h` for human-readable file sizes. Example: `ls -l` to list files in long format.
+1. `ls` - You can use various options like `-l` for a detailed (long) list, `-a` to show hidden files, and `-h` for human-readable file sizes. Example: `ls -l` to list files in long format.
 
 2. `less` - A command-line text viewer that allows you to view the contents of text files page by page. Example: `less filename.txt` to view a text file.
 
@@ -150,3 +150,165 @@ Hard links reference the same data on disk, while symbolic links are pointers to
 Symbolic links can span different filesystems, but hard links cannot.
 Deleting the original file of a hard link retains the data; for a symbolic link, it breaks the link.
 
+# Wildcads
+
+Wildcards are characters or symbols used to represent patterns of filenames or paths. They allow you to perform operations on multiple files that match a specified pattern. Here are some commonly used wildcards and how they work:
+
+1. `*` (Asterisk):
+Matches any number of characters (including none).
+Example: `ls *.txt` matches all files ending with ".txt."
+
+2. `?` (Question Mark):
+Matches a single character.
+Example: `ls file?.txt` matches "file1.txt," "fileA.txt," etc.
+
+3. `[ ]` (Square Brackets):
+Matches a single character within the specified range or set.
+Example: `ls file[0-9].txt` matches "file1.txt," "file2.txt," ..., "file9.txt."
+
+4. `[! ]` (Exclamation Mark Inside Square Brackets):
+Matches a single character NOT in the specified range or set.
+Example: `ls file[!A-Z].txt` matches any "file*.txt" except those with an uppercase letter.
+
+5. `{ }` (Curly Braces):
+Generates a list of comma-separated options.
+Example: `mv file{1,2}.txt destination` moves "file1.txt" and "file2.txt" to the "destination" directory.
+
+6. `**` (Double Asterisk) - Recursive Wildcard:
+Matches directories and their contents recursively. Useful for searching or performing actions on files within subdirectories.
+Example: `grep 'pattern' **/*.txt` searches for "pattern" in all .txt files in subdirectories.
+
+Usage:
+Wildcards are commonly used with commands like `ls`, `cp`, `mv`, `rm`, `find`, and others. To use wildcards, simply include them in your command along with the pattern you want to match.
+
+# Types of Commands
+
+1. **Internal Commands**:
+These are built into the shell and do not exist as separate executable files. Examples include `cd`, `echo`, and `pwd`.
+
+2. **External Commands**:
+These are standalone executable programs located in directories listed in the `PATH` environment variable. Examples include `ls`, `cp`, and `grep`.
+
+3. **Shell Built-in Commands**:
+These are specific to the shell you're using (e.g., Bash) and are not separate programs. Examples include `cd`, `echo`, and `export`.
+
+4. **System Commands**:
+These perform system-level tasks and often require superuser privileges (root access). Examples include `shutdown`, `reboot`, and `useradd`.
+
+5. **Utility Commands**:
+These are general-purpose utilities that provide various functionalities, like text processing, compression, and networking. Examples include `sed`, `tar`, and `ping`.
+
+6. **Package Management Commands**:
+These are used to manage software packages on the system. Examples include `apt`, `yum`, and `dpkg`.
+
+7. **File and Directory Commands**:
+These are used for file and directory operations like `ls`, `cp`, `mv`, and `rm`.
+
+8. **Text Processing Commands**:
+These commands manipulate and process text data, including `grep`, `awk`, and `sed`.
+
+9. **Help and Documentation Commands**:
+10. These commands provide assistance and documentation for other commands. Examples include `man`, `info`, and `--help` options.
+
+# alias
+
+An **alias** is a user-defined shortcut or substitute for a longer command or series of commands. It allows you to create custom commands for convenience and efficiency. For example, you could create an alias like `alias ll='ls -l'`, so when you type `ll`, it automatically runs `ls -l`.
+
+# Difference between Help and Man command: 
+The choice between using the `help` command and the `man` command depends on the availability of documentation for a particular command:
+
+**`man` (Manual) Command**:
+Use `man` when you want detailed documentation for a specific command.
+Example: `man ls` provides the manual page for the `ls` command, including detailed usage and options.
+
+**`help` Command**:
+Not all commands have a `help` command associated with them. Some built-in commands or shell-specific commands may support `help` to provide basic usage information.
+Example: `help cd` might display information about how to use the `cd` built-in command in a shell like Bash. 
+
+In summary, use `man` for comprehensive command documentation and `help` for built-in or shell-specific command assistance when available.
+
+# Reading a man page (manual page) 
+
+Here's how to read a man page and understand its sections:
+
+1. **Open the Man Page**:
+To open a man page for a specific command or topic, use the `man` command followed by the name of the command or topic. Example: `man ls` to open the manual page for the `ls` command.
+
+2. **Sections**:
+Man pages are divided into sections, each serving a specific purpose. Sections are typically numbered from 1 to 9, and they contain information about different topics.
+
+3. **Navigating the Man Page**:
+Use arrow keys, page up/down, or the spacebar to scroll through the man page. Press `q` to exit the man page and return to the command prompt.
+
+4. **Sections in a Man Page**:
+Man pages are organized into various sections, which are typically indicated by a number and a brief description. Common sections include:
+   
+Section 1: User Commands
+These are commands that can be run by regular users. Example: `man 1 ls` displays the user command manual for `ls`.
+
+Section 2: System Calls
+This section contains info about system calls, which are functions provided by the kernel for programmatic access to the operating system's services. Example: `man 2 open` provides details about the `open` system call.
+
+Section 3: Library Functions
+Here, you can find information about library functions provided by the C standard library. Example: `man 3 printf` gives details about the `printf` function.
+
+Section 4: Devices and Special Files
+This section covers device files, drivers, and special files in the `/dev` directory. Example: `man 4 tty` explains the `tty` device.
+
+Section 5: File Formats and Conventions
+Describes file formats, configuration files, and conventions used on the system. Example: `man 5 passwd` explains the `/etc/passwd` file format.
+
+Section 6: Games and Demos
+Contains information about games and demos. Example: `man 6 tetris` provides information about a game.
+
+Section 7: Miscellanea
+Covers various topics such as macro packages, conventions, and standards.
+Example: `man 7 regex` explains regular expressions.
+
+Section 8: System Administration and Privileged Commands
+Contains commands that require superuser privileges. Example: `man 8 mount` provides information on the `mount` command used for filesystem mounting.
+
+Section 9: Kernel Routine
+Covers kernel-specific routines and functions. Example: `man 9 irq` explains kernel interrupt handling routines.
+
+# Keyboard Shortcut for Bash
+
+Here are some common shortcuts for Bash:
+
+1. **Navigation Shortcuts**:
+`Ctrl + A`: Move to the beginning of the line.
+`Ctrl + E`: Move to the end of the line.
+`Ctrl + U`: Delete from the cursor position to the beginning of the line.
+`Ctrl + K`: Delete from the cursor position to the end of the line.
+`Ctrl + L`: Clear the terminal screen (similar to the `clear` command).
+
+2. **Editing Shortcuts**:
+`Ctrl + W`: Delete the word to the left of the cursor.
+`Ctrl + Y`: Paste (yank) the most recently deleted text.
+`Ctrl + _` (underscore): Undo the last change (works for many commands).
+`Alt + .` (period): Paste the last argument of the previous command.
+
+3. **History Shortcuts**:
+`Ctrl + R`: Search through command history interactively.
+`Up Arrow` and `Down Arrow`: Navigate through previously entered commands.
+`!!`: Repeat the last command.
+`!$`: Refer to the last argument of the previous command.
+
+4. **Tab Completion**:
+`Tab`: Auto-complete file and directory names, or cycle through available options when multiple matches exist.
+`Tab + Tab`: Display a list of possible completions.
+
+5. **Miscellaneous Shortcuts**:
+`Ctrl + C`: Interrupt (stop) the currently running command.
+`Ctrl + D`: Log out or exit the current shell (when the line is empty).
+`Ctrl + Z`: Suspend the current foreground process (use `fg` to resume).
+
+6. **Advanced Shortcuts**:
+`Alt + B`: Move backward one word.
+`Alt + F`: Move forward one word.
+`Alt + U`: Convert the characters from the cursor position to the end of the word to uppercase.
+`Alt + L`: Convert the characters from the cursor position to the end of the word to lowercase.
+
+# What does LTS means?
+
+LTS stands for "Long-Term Support." It is a term commonly used in the software and technology industry to describe a specific type of release or support cycle for software, hardware, or systems. 
