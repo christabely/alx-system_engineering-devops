@@ -5,11 +5,11 @@ http://linuxcommand.org/lc3_lts0090.php
 
 Shell Permissions are managed through three permission categories:
 
-1. **Owner Permissions**: These apply to the owner of the file or directory. The owner can typically control who can access, modify, or execute the file. 
+**Owner Permissions**: These apply to the owner of the file or directory. The owner can typically control who can access, modify, or execute the file. 
 
-2. **Group Permissions**: These apply to a group of users who have been granted access to the file or directory.
+**Group Permissions**: These apply to a group of users who have been granted access to the file or directory.
 
-3. **Others Permissions**: These applies to all other users who are not the owner or part of the group.
+**Others Permissions**: These applies to all other users who are not the owner or part of the group.
 
 `chmod` command is used to change permissions in the shell.
 
@@ -51,3 +51,21 @@ Chmod Octal Value	Meaning
 **666	(rw-rw-rw-)** All users may read and write the file.
 **644	(rw-r--r--)** The owner may read and write a file, while all others may only read the file. A common setting for data files that everybody may read, but only the owner may change.
 **600	(rw-------)** The owner may read and write a file. All others have no rights. A common setting for data files that the owner wants to keep private.
+
+``h
+`How to print the effective userid`
+To print the effective user ID (EUID) in a Unix-like operating system, you can use the geteuid() function in a programming language like C or use the id -u command in the terminal. Here's how you can do it in both ways:
+
+Using C:
+`#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    uid_t euid = geteuid();
+    printf("Effective User ID: %d\n", euid);
+    return 0;
+}`
+
+Compile this code using a C compiler (e.g., gcc) and then run the executable. It will print the EUID to the console.
+
+Using the terminal (Linux/Unix):
