@@ -129,7 +129,18 @@ Alternatively, you can use `uniq -u` to show only the unique lines, but this req
 
 (In simpler terms, "sort -u" combines sorting and duplicate removal in a single command and requires sorted input, while "uniq" focuses solely on removing consecutive duplicates and also requires sorted input. The choice between them depends on whether you need to sort the input as well and whether you want to remove consecutive or all duplicate lines.)
 
-grep : Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters.
+grep : Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters. In other words, it allows you to search for patterns or specific text within files. Syntax:
+   ```
+   grep "apple" fruits.txt
+   ```
+   ```
+   grep "pattern*" file
+   ```
+   ```
+   grep pattern file
+   ```
+   ```
+
 
 fmt : Reads text from standard input, then outputs formatted text on standard output.
 
