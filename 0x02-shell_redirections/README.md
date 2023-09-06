@@ -23,7 +23,7 @@ Here's a brief overview:
    command >> file_name.txt
    ```
 
-`4.Pipe (`|`)` : The pipe symbol allows you to take the output of one command and use it as the input to another. This is useful for chaining commands together. For example:
+`4.Pipe (`|`)` : The pipe symbol allows you to take the output of one command and use it as the input to another. This is useful for chaining multiple commands together. For example:
 
    ```
    command1 | command2
@@ -35,7 +35,7 @@ Here's a brief overview:
    command 2> file_name.txt
    ```
 
-`6.Combining Output and Error (`2>&1`):` You can combine standard output and standard error into a single file using `2>&1`. For example:
+`6.Combining Output and Error (`2>&1`)` : You can combine standard output and standard error into a single file using `2>&1`. For example:
 
    ```
    command > file_name.txt 2>&1
