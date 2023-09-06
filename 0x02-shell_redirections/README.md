@@ -22,12 +22,39 @@ Here's a brief overview:
    ```
    command >> file_name.txt
    ```
+A command can have both its input and output redirected.
+
+   ```
+sort < file_name.txt > sorted_file_name.txt
+   ```
 
 `4.Pipe (`|`)` : The pipe symbol allows you to take the output of one command and use it as the input to another. This is useful for chaining multiple commands together. For example:
 
    ```
    command1 | command2
    ```
+In the example below, the output of the ls command is fed into less. By using this "| less" trick, we can make any command have scrolling output.
+   
+   ```
+   ls -l | less
+   ```
+
+Pipeline Commands and what they do.
+
+   ```
+   ls -lt | head
+   ```
+This displays the 10 newest files in the current directory.
+
+   ```
+   du | sort -nr
+   ```
+This displays a list of directories and how much space they consume, sorted from the largest to the smallest.
+
+   ```
+   find . -type f -print | wc -l
+   ```
+This  displays the total number of files in the current working directory and all of its subdirectories.
 
 `5.Standard Error Redirection (`2>`)` : You can redirect error messages (standard error) to a file using the `2>` operator. For example, to capture error messages in a file called "errors.txt":
 
