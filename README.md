@@ -1,5 +1,8 @@
 # System Engineering and DevOps
 
+![oop-meme](https://github.com/christabely/alx-system_engineering-devops/assets/129256391/2e3b254f-363e-4b18-805f-d795eb17ae97)
+
+
 System engineering and DevOps are two distinct but interconnected disciplines in the field of software development and IT operations.
 
 1. **System Engineering**:
