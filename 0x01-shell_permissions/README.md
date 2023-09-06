@@ -1,7 +1,9 @@
-For better understanding, read
+Shell permissions dictate who can access, modify, or execute files and directories.
+
+For better understanding, read;
 http://linuxcommand.org/lc3_lts0090.php
 
-Shell permissions dictate who can access, modify, or execute files and directories. They are managed through three permission categories:
+Shell Permissions are managed through three permission categories:
 
 1. **Owner Permissions**: These apply to the owner of the file or directory. The owner can typically control who can access, modify, or execute the file. 
 
