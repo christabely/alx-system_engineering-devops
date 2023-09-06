@@ -114,3 +114,39 @@ Hidden files and directories are those whose names start with a dot (e.g., `.con
 
 11. `cd -`:
 The `cd -` command is used to switch to the previous working directory. It's a convenient way to toggle between two directories.
+
+# Looking Around
+
+`ls` - You can use various options like `-l` for a detailed (long) list, `-a` to show hidden files, and `-h` for human-readable file sizes. Example: `ls -l` to list files in long format.
+
+2. `less` - A command-line text viewer that allows you to view the contents of text files page by page. Example: `less filename.txt` to view a text file.
+
+3. `file` - It is used to determine the type of a file by examining its contents and attributes. Example: `file filename` to identify the type of a file.
+
+4. Options and Arguments:
+Commands can accept options (often preceded by a hyphen, like `-l` in `ls -l`) and arguments (file or directory names). Options modify the behavior of a command, and arguments specify what the command should operate on.
+
+5. `ln` - This command is used to create links (shortcuts) to files or directories. There are two types of links: symbolic links (`ln -s`) and hard links (`ln` without `-s`).
+Example: `ln -s target link_name` to create a symbolic link.
+
+6. Common/Important Directories:
+`/` (root directory): The top-level directory in the filesystem.
+`/home`: Contains user home directories.
+`/bin`, `/usr/bin`: Hold essential system binaries.
+`/etc`: Contains system configuration files.
+`/var`: Stores variable data such as logs and temporary files.
+
+# Symbolic Link:
+
+A symbolic link (or symlink) is a reference to another file or directory. It's like a shortcut. It can point to files or directories on different filesystems and can be easily identified because it starts with `ln -s`.
+
+# Hard Link:
+A hard link is another reference to an existing file on the same filesystem. Hard links share the same inode (file data) as the original file and have the same content.
+Deleting the original file does not remove data if there are hard links to it.
+
+# Difference between Hard Link and Symbolic Link:
+
+Hard links reference the same data on disk, while symbolic links are pointers to another file or directory.
+Symbolic links can span different filesystems, but hard links cannot.
+Deleting the original file of a hard link retains the data; for a symbolic link, it breaks the link.
+
