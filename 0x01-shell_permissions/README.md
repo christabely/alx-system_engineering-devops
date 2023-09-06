@@ -124,3 +124,41 @@ Compile this code using a C compiler (e.g., gcc) and then run the executable. It
 You can use the 'groups' command in the terminal to print the groups a user is in. Syntax: groups
 
 `3. How to print real and effective user and group IDs`
+In a C program, you can use the getuid(), geteuid(), getgid(), and getegid() functions to retrieve the real and effective user and group IDs. In the terminal, you can use the id command with appropriate options to display the real and effective user and group IDs.
+
+`Using C`
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    uid_t real_uid = getuid();
+    uid_t effective_uid = geteuid();
+    gid_t real_gid = getgid();
+    gid_t effective_gid = getegid();
+
+    printf("Real User ID: %d\n", real_uid);
+    printf("Effective User ID: %d\n", effective_uid);
+    printf("Real Group ID: %d\n", real_gid);
+    printf("Effective Group ID: %d\n", effective_gid);
+
+    return 0;
+}
+
+Compile this code using a C compiler (e.g., gcc) and then run the executable. It will print both the real and effective user and group IDs.
+
+`Using the terminal`
+# Print real and effective user IDs
+id -u
+id -u -r
+
+# Print real and effective group IDs
+id -g
+id -g -r
+
+id -u will print the effective user ID.
+id -u -r will print the real user ID.
+id -g will print the effective group ID.
+id -g -r will print the real group ID.
+Each command will display the respective user or group ID as a number on the terminal.
+
+
