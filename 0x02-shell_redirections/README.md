@@ -40,21 +40,21 @@ In the example below, the output of the ls command is fed into less. By using th
    ```
 
 Pipeline Commands and what they do.
-
+This displays the 10 newest files in the current directory.
    ```
    ls -lt | head
    ```
-This displays the 10 newest files in the current directory.
 
+This displays a list of directories and how much space they consume, sorted from the largest to the smallest.
    ```
    du | sort -nr
    ```
-This displays a list of directories and how much space they consume, sorted from the largest to the smallest.
 
+This  displays the total number of files in the current working directory and all of its subdirectories.
    ```
    find . -type f -print | wc -l
    ```
-This  displays the total number of files in the current working directory and all of its subdirectories.
+
 
 `5.Standard Error Redirection (`2>`)` : You can redirect error messages (standard error) to a file using the `2>` operator. For example, to capture error messages in a file called "errors.txt":
 
