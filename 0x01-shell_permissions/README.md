@@ -40,7 +40,8 @@ When setting permissions using chmod, octal (base-8) value can be used to repres
 2 represents write permission.
 1 represents execute permission
 
-Chmod Octal Value	Meaning
+`Chmod Octal Value Meaning`
+
 **777	(rwxrwxrwx)** No restrictions on permissions. Anybody may do anything. Generally not a desirable setting.
 
 **755	(rwxr-xr-x)** The file's owner may read, write, and execute the file. All others may read and execute the file. This setting is common for programs that are used by all users.
@@ -56,6 +57,7 @@ Chmod Octal Value	Meaning
 ``h
 
 `1.How to print the effective userid`
+
 To print the effective user ID (EUID) in a Unix-like operating system, you can use the geteuid() function in a programming language like C or use the id -u command in the terminal. Here's how you can do it in both ways:
 
 `Using C`
