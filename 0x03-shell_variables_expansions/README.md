@@ -6,32 +6,27 @@ https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html
 https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html
 https://www.linfo.org/alias.html
 
-
 1. `printenv`: This command is used to print the environment variables of the current shell session. Environment variables store information that the shell and various programs use, such as system paths or user-specific settings.
 
 2. `set`: The `set` command is used to display all shell variables, including environment variables, user-defined variables, and shell options. It can also be used to set or change the values of variables.
 
 3. `unset`: This command is used to remove a variable or an environment variable. It effectively deletes a variable, making it undefined.
 
-4. `export`: The `export` command is used to create or modify environment variables in the current shell session. It makes a shell variable an environment variable, which can be accessed by child processes of the current shell.
+4. `export`: This command is used to create or modify environment variables in the current shell session. It makes a shell variable an environment variable, which can be accessed by child processes of the current shell.
 
-5. `alias`: The `alias` command is used to create shorthand or alternative names for other commands. It's handy for creating custom command shortcuts.
+5. `alias`: This command is used to create shorthand or alternative names for other commands. It's handy for creating custom command shortcuts.
 
 6. `unalias`: This command is used to remove previously defined aliases, reverting the command to its original behavior.
 
 7. `.` (dot): In a shell context, the dot is used to execute a script or command file in the current shell environment. It's often used to load configuration files or set up environment variables.
 
-8. `source`: The `source` command is used to execute commands from a script file within the current shell session. It's commonly used for running shell script files to set environment variables or configure the shell.
+8. `source`: This is used to execute commands from a script file within the current shell session. It's commonly used for running shell script files to set environment variables or configure the shell.
 
 9. `printf`: This command is used for formatted printing. It allows you to specify a format string and one or more values to be inserted into that string, which can then be printed to the standard output.
 
-These commands are fundamental for working with the shell and managing the environment and processes in a Unix-like operating system.
-
 # Resources Explanations
 
-Certainly, here's an explanation of each of these terms:
-
-1. **Expansions**: In the context of shell scripting, expansions refer to the process of replacing certain expressions or patterns with their corresponding values. Common expansions include variable expansion (replacing a variable with its value), command substitution (replacing a command with its output), and pathname expansion (replacing wildcards with matching file names).
+1. **Expansions**: This refer to the process of replacing certain expressions or patterns with their corresponding values. Common expansions include variable expansion (replacing a variable with its value), command substitution (replacing a command with its output), and pathname expansion (replacing wildcards with matching file names).
 
 2. **Shell Arithmetic**: Shell arithmetic allows you to perform mathematical operations within a shell script or at the command line. Shells like Bash support basic arithmetic operations like addition, subtraction, multiplication, and division using arithmetic expansion `$(( ))` or the `expr` command.
 
@@ -39,7 +34,7 @@ Certainly, here's an explanation of each of these terms:
 
 4. **Shell Initialization Files**: Shell initialization files are scripts or configuration files that are executed when a shell session starts. They are used to set up the environment for the user by defining variables, setting aliases, and configuring various aspects of the shell's behavior. Common initialization files include `.bashrc` and `.bash_profile` for the Bash shell.
 
-5. **The alias Command**: The `alias` command is used to create shorthand or alternative names for other commands in a shell environment. It allows users to define custom command shortcuts for convenience. For example, you can create an alias like `alias ll='ls -l'` to make `ll` a shorthand for the `ls -l` command.
+5. **The alias Command**: This is used to create shorthand or alternative names for other commands in a shell environment. It allows users to define custom command shortcuts for convenience. For example, you can create an alias like `alias ll='ls -l'` to make `ll` a shorthand for the `ls -l` command.
 
 6. **Technical Writing**: Technical writing is a form of communication that focuses on conveying technical or complex information in a clear and understandable manner. It is commonly used in technical documentation, user manuals, software guides, and other contexts where precise and concise communication is essential. Technical writers use various writing styles and tools to make complex concepts accessible to a specific audience.
 
@@ -58,31 +53,25 @@ When you type the command `$ ls -l *.txt` in a Unix-like shell, several things h
 4. `*.txt`: This is a wildcard pattern. The `*` (asterisk) is a wildcard character that matches any characters, and `.txt` specifies a pattern that matches all files with the ".txt" file extension. This pattern effectively tells the shell to list all files in the current directory with a ".txt" extension.
 
 So, when you enter `$ ls -l *.txt`:
-
 - The shell interprets this as a command to list detailed information about all files with the ".txt" extension in the current directory.
 - It performs the necessary file matching using the wildcard pattern.
 - The `ls` command then executes and displays the long-format listing of the matched files.
-
-In summary, the command lists detailed information about files with the ".txt" extension in the current directory.
 
 # Shell Initialization Files
 
 The `/etc/profile` file, the `/etc/profile.d` directory, and the `~/.bashrc` file are all related to configuring the behavior and environment of the Bash shell on Unix-like operating systems:
 
 1. `/etc/profile`:
-   - `/etc/profile` is a system-wide configuration file for the Bash shell.
-   - It is executed when a user logs in to the system, providing global settings for all users.
+   - `/etc/profile` is a system-wide configuration file for the Bash shell. It is executed when a user logs in to the system, providing global settings for all users.
    - System administrators can use this file to set environment variables, system-wide aliases, and other settings that should apply to all users.
 
 2. `/etc/profile.d`:
-   - `/etc/profile.d` is a directory that contains additional shell scripts that are executed when a user logs in.
-   - These scripts can be used to set environment variables or configure the shell for specific applications or services.
+   - `/etc/profile.d` is a directory that contains additional shell scripts that are executed when a user logs in. These scripts can be used to set environment variables or configure the shell for specific applications or services.
    - By organizing configurations into separate script files within this directory, it becomes easier to manage and update system-wide settings without modifying the main `/etc/profile` file.
 
 3. `~/.bashrc`:
    - `~/.bashrc` is a user-specific configuration file for the Bash shell.
-   - The tilde `~` represents the user's home directory, so `~/.bashrc` is located in the home directory of each user.
-   - This file is executed each time a user opens a new interactive Bash shell.
+   - The tilde `~` represents the user's home directory, so `~/.bashrc` is located in the home directory of each user. This file is executed each time a user opens a new interactive Bash shell.
    - Users can customize their shell environment by adding aliases, setting environment variables, defining functions, and configuring various aspects of their shell session in this file.
 
 In summary:
@@ -93,8 +82,6 @@ In summary:
 - `~/.bashrc` is a user-specific configuration file for customizing the Bash shell environment and is executed for each user upon opening a new interactive shell session.
 
 # Variables
-
-Let's clarify these concepts:
 
 1. **Local vs. Global Variables**:
    - **Local Variable**: A local variable is a variable that is defined and exists only within a specific scope, such as within a function or a block of code. It cannot be accessed from outside that scope.
@@ -138,8 +125,7 @@ Expansions in shell scripting refer to the process of replacing certain patterns
      - `$variable` would be replaced with the value of the `variable` variable.
 
 2. **Command Substitution**:
-   - Command substitution allows you to replace a command with its output. There are two common ways to perform command substitution:
-     - Using `$(command)`: You enclose the command in `$()`. For example:
+   - Command substitution allows you to replace a command with its output. There are two common ways to perform command substitution: Using `$(command)`: You enclose the command in `$()`. For example:
        ```
        current_date=$(date)
        ```
@@ -230,10 +216,7 @@ You can perform arithmetic operations in a Unix-like shell using various methods
      echo "Result is $result"
      ```
 
-Remember that different shells may have slight variations in syntax and available features for arithmetic operations. The methods mentioned above are commonly used in Bash, which is one of the most widely used Unix-like shells. Depending on your specific shell and requirements, you may need to adjust the syntax accordingly.
-
 # The Alias Command
-
 
 In Unix-like systems, you can create, list, and temporarily disable aliases using shell commands. Here's how to do each of these actions:
 
@@ -283,7 +266,6 @@ Keep in mind that disabling an alias with `unalias` is temporary, and it will on
 
 # How to execute commands from a file in the current shell
 
-
 To execute commands from a file in the current shell, you can use the `source` command (or its alias `.`). This command reads and executes the contents of a file within the current shell session, allowing you to set environment variables and run commands as if you had typed them directly. Here's how to use it:
 
 Using the `source` command:
@@ -332,8 +314,6 @@ These files are essential for configuring the behavior and environment of the Ba
 
 # awk, tar, bzip2, date, scp, ulimit, umask, and shell scripting.
 
-Certainly, here's an explanation of each of these terms:
-
 1. **Awk**:
    - Awk is a versatile text processing tool used in Unix-like operating systems. It can process text files, extract data, and perform various operations, making it valuable for tasks like data manipulation, reporting, and data extraction. Awk uses patterns and actions to process data.
 
@@ -357,8 +337,6 @@ Certainly, here's an explanation of each of these terms:
 
 8. **Shell Scripting**:
    - Shell scripting refers to the process of writing scripts or programs using a Unix-like shell (e.g., Bash) as the scripting language. Shell scripts are used for automating tasks, processing data, and interacting with the operating system. They can be simple one-liners or complex programs.
-
-These concepts are fundamental to working with Unix-like operating systems and command-line interfaces, enabling users to manage files, process data, automate tasks, and control system resources.
 
 # /etc/profile.d
 In Unix-like operating systems, the `/etc/profile.d` directory is a special directory used for system-wide shell initialization and configuration. It allows system administrators and package maintainers to add custom configuration files that are executed when users log in. Here's how it works:
