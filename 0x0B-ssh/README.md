@@ -1,4 +1,10 @@
-To solve task 0, make sure you have set up your ssh keys; pubic and private and have updated your intranet with the public key and saved the peivate key at a safe place.
+# 0x0B. SSH
+
+![zPVRKhPsUP5lK](https://github.com/christabely/alx-system_engineering-devops/assets/129256391/58ae7b33-7c2d-4fd8-89c6-5f13436e931d)
+
+
+# Task 0
+Make sure you have set up your ssh keys; pubic and private and have updated your intranet with the public key and saved the peivate key at a safe place.
 
 Next, navigate to the root of your terminal <cd root>.
 
@@ -33,7 +39,8 @@ Git add, commit and push.
 
 check your code.
 
-#Task1 To create an SSH key pair
+# Task 1 
+To create an SSH key pair
 
 Create the bash scipt file using the following content;
 <#!/usr/bin/env bash
@@ -74,6 +81,35 @@ Type <ssh -v ubuntu@98.98.98.98>
 
 git add, commit, push
     
+# Task 3
+Log into your ubuntu user <ssh -i ~/.ssh/school ubuntu@IP_address>
+
+Enter your passphrase <initial passphrase used to generate the keys>
+
+Once you're logged into the server, types <cd> into the .ssh directory.
+
+Inside the .ssh directory, <ls> to list the files available.
+
+<vi> into the file "authorized_keys"
+
+There would be a list of keys saved already in this file. Copy and paste (add) the requested key to this file.
+
+Save and exit the Vi editor.
+
+Type <exit> to exit the ubuntu user.
+
+git add, commit and push
+
+# Task 4
+
+Create the "100-puppet_ssh_config.pp" file and update with the right content. 
+
+Save the Puppet manifest file.
+
+Run the puppet apply command to apply the configuration <sudo puppet apply 100-puppet_ssh_config.pp>
+
+
+
 
 
 
